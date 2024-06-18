@@ -1,0 +1,95 @@
+h2{
+  color: rgb(54, 54, 54);
+}
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  height: 100%;
+  font-size: 1.1rem;
+  color: rgb(54, 54, 54);
+  outline: none;
+  border: none;
+}
+
+/* button {
+  padding: 10px;
+  margin: 5px;
+} */
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+.header{
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;  
+  background-color: rgb(0, 136, 255);
+  align-items: center;
+  color: white;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+  background-color: rgb(225, 225, 225);
+  padding: 10px 128px;
+}
+
+.input__container{
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add__btn{
+  width: 200px;
+  padding: 10px;
+  height: 100%;
+  font-size: 1.1rem;
+  background-color: rgb(0, 136, 255);
+  color: white;
+  font-weight: 600;
+  border: none;
+}
+
+.task{
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(54, 54, 54);
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: white;
+}
+
+.task__btn{
+  width: 150px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.deleteBtn{
+  color: rgb(195, 41, 41);
+}
+
+.editBtn{
+  color: rgb(0, 136, 255);
+}
+
+.completeBtn{
+  color: rgb(30, 109, 30);
+}
+
+.edit__input{
+  border: 1px solid rgb(54, 54, 54);
+}
