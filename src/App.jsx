@@ -1,18 +1,25 @@
-import React from 'react';
-import TaskInput from './components/TaskInput';
-import TaskList from './components/TaskList'
-import './App.css';
+import React from "react";
+import TaskInput from "./components/TaskInput";
+import TaskList from "./components/TaskList";
+import "./App.css";
 
 const App = () => {
   return (
     <div className="App">
-      <div className='header'>
-      <h1>To-Do List</h1>
+      {/* header section */}
+      <div className="header">
+        <h1>To-Do List</h1>
       </div>
-      <div className='container'>
-      <TaskInput />
-      <h2>All Tasks</h2>
-      <TaskList />
+
+      {/* container for task input and task list */}
+      <div className="container">
+        {/* component for adding a new task */}
+        <TaskInput />
+
+        <h2>All Tasks</h2>
+
+        {/* component for displaying the list of tasks */}
+        <TaskList />
       </div>
     </div>
   );

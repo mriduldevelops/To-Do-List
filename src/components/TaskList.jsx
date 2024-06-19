@@ -9,7 +9,10 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
 const TaskList = () => {
+  // get the list of tasks from redux store
   const tasks = useSelector((state) => state.tasks);
+
+  // local state for handling the modal visibility
   const [open, setOpen] = useState(false);
   const [currentTask, setCurrentTask] = useState({
     id: "",
@@ -19,14 +22,17 @@ const TaskList = () => {
 
   const dispatch = useDispatch();
 
+  // function to handle deleting a task
   const handleDelete = (id) => {
     dispatch(deleteTask(id));
   };
 
+  // function to handle toggling a task's completion status
   const handleToggleComplete = (id) => {
     dispatch(toggleComplete(id));
   };
 
+  // function to handle opening the edit modal with the selected task's data
   const handleEdit = (task) => {
     setOpen(true);
     setCurrentTask({
@@ -36,11 +42,13 @@ const TaskList = () => {
     });
   };
 
+  // function to handle closing the modal and saving the edited task
   const handleClose = () => {
     dispatch(editTask(currentTask));
     setOpen(false);
   };
 
+  // function to handle changes in the task text input
   const handleChange = (e) => {
     setCurrentTask({ ...currentTask, text: e.target.value });
   };
@@ -58,6 +66,7 @@ const TaskList = () => {
               {task.text}
             </span>
             <div className="task__btn">
+              {/* button to toggle the task's completion status */}
               <i
                 className={`fa-regular ${
                   task.completed ? "fa-square-check completeBtn" : "fa-square"
@@ -65,15 +74,20 @@ const TaskList = () => {
                 onClick={() => handleToggleComplete(task.id)}
               ></i>
 
+              {/* button to open the edit modal */}
               <i
                 className="fa-regular fa-pen-to-square editBtn"
                 onClick={() => handleEdit(task)}
               ></i>
+
+              {/* button to delete the task */}
               <i
                 className="fa-solid fa-trash deleteBtn"
                 onClick={() => handleDelete(task.id)}
               ></i>
             </div>
+            
+            {/* dialog component from for editing the task */}
             <Dialog
               open={open}
               onClose={handleClose}
@@ -98,6 +112,8 @@ const TaskList = () => {
               </DialogContent>
               <DialogActions>
                 <Button onClick={handleClose}>Cancel</Button>
+                
+                {/* button to save the edited task and close the modal */}
                 <Button onClick={handleClose} autoFocus>
                   Edit
                 </Button>
