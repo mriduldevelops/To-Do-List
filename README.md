@@ -31,12 +31,14 @@ Follow these instructions to set up and run the application locally.
 
 2. **Install dependencies**
 
+   ```bash
    npm install
 
 ### Running the Application
 
 1. **Start the development server**
 
+   ```bash
    npm run dev
 
 2. **Open your browser**
@@ -50,6 +52,6 @@ Follow these instructions to set up and run the application locally.
 - Delete a Task: Click the trash icon next to a task.
 - Mark a Task as Completed: Click the checkbox icon next to a task.
 
-### Live link of app
+## Live link of app
 
    Open your browser and paste this URL https://mriduldevelops.github.io/To-Do-List/
