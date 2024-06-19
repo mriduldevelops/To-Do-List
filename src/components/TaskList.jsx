@@ -58,14 +58,7 @@ const TaskList = () => {
       <ul>
         {tasks.map((task) => (
           <li key={task.id} className="task">
-            <span
-              style={{
-                textDecoration: task.completed ? "line-through" : "none",
-              }}
-            >
-              {task.text}
-            </span>
-            <div className="task__btn">
+            <div className="task__text">
               {/* button to toggle the task's completion status */}
               <i
                 className={`fa-regular ${
@@ -73,12 +66,23 @@ const TaskList = () => {
                 }`}
                 onClick={() => handleToggleComplete(task.id)}
               ></i>
-
+              <span
+                style={{
+                  textDecoration: task.completed ? "line-through" : "none",
+                }}
+              >
+                {task.text}
+              </span>
+            </div>
+            <div className="task__btn">
               {/* button to open the edit modal */}
-              <i
+              {
+                !task.completed && <i
                 className="fa-regular fa-pen-to-square editBtn"
                 onClick={() => handleEdit(task)}
               ></i>
+              }
+              
 
               {/* button to delete the task */}
               <i
@@ -86,7 +90,7 @@ const TaskList = () => {
                 onClick={() => handleDelete(task.id)}
               ></i>
             </div>
-            
+
             {/* dialog component from for editing the task */}
             <Dialog
               open={open}
@@ -112,7 +116,7 @@ const TaskList = () => {
               </DialogContent>
               <DialogActions>
                 <Button onClick={handleClose}>Cancel</Button>
-                
+
                 {/* button to save the edited task and close the modal */}
                 <Button onClick={handleClose} autoFocus>
                   Edit
